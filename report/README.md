@@ -5,9 +5,9 @@
 
 2.18)
 
-2.19)
+2.19) Using a chunksize of 1 is a bad strategy because multiple threads are accessing the same cache block at the same time. This can force each thread to reload cache lines as if it were actually utilizing the same piece of data and drastically slow down each thread. A larger chunksize that is divisible by the size of a cache line is much preferred.
 
-2.21)
+2.21) 
 
 2.22)
 
