@@ -24,7 +24,7 @@ MPI_Sendrecv( &b[0], &bfromright, leftproc);
 
 2.23) Since we assume there is only bandwidth for a single message at a time between the two nodes, and given that we need to send four messages between the two nodes in the distributed scenario vs. only one message in the hybrid scenario, we can determine that the distributed scenario would take 4 times as long as the hybrid. Assuming we are not using fire-and-forget communication directives, each message will require a send and a receive to occur, and, therefore, the messages would not be able to be pipelined. If we assume the latency to send a single message to be `l`, we know each send/receive will take `2l`. Without being able to pipeline, each of the four messages will not overlap in any of their message sending despite the multiple processes. Therefore, in the distributed case, the total time for the send/receive is `8l`. For the hybrid case, there would be 1 bundled message, so the total time for the send/receive would be `2l`.
 
-2.27)
+2.27) The parallelism analysis is crucial in order to correctly order the loops for the loop exchange. Since i is the only loop that is parallelizable, and given that we can fit all of C and one row of B into cache, the i-loop must be exchanged with the n-loop in order to parallelize the code. The loop after exchange is still parallelizable, but only on i, whereas the prior example was parallelizable on i and j.
 
 ## Part 3: MPI Basics
 
