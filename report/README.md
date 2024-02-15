@@ -11,28 +11,27 @@
 ```
 for (i=0; i < LocalProblemSize; i++)
 {
-  if (i==0) {
-    bleft = bfromleft;
-  }
-  else {
-    bleft = b[i-1];
-  }
-  if (i==LocalProblemSize-1) {
-    bright = bfromright;
-  }
-  else {
-    bright = b[i+1];
-  }  
   if (myTaskID == 0 && i == 0) {
-    a[i] = (b[i] + bright) / 2;
+    a[i] = (b[i] + b[i+1]) / 2;
   }
   else if (myTaskID == ntasks - 1 && i == LocalProblemSize - 1) {
-    a[i] = (bleft + b[i]) / 2;
+    a[i] = (b[i-1] + b[i]) / 2;
   }
   else {
+    if (i==0) {
+      bleft = bfromleft;
+    }
+    else {
+      bleft = b[i-1];
+    }
+    if (i==LocalProblemSize-1) {
+      bright = bfromright;
+    }
+    else {
+      bright = b[i+1];
+    }  
     a[i] = (b[i] + bleft + bright) / 3;
   }
-
 }
 ```
 
