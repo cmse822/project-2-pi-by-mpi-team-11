@@ -110,7 +110,7 @@ Running time for number of ranks=3: 0.013891
 
 Running time for number of ranks=4: 0.010499 
 
-Running time for number of ranks=20; 0.002677
+Running time for number of ranks=20: 0.002677
 
 
 This is a strong scaling study. The number of rounds is fixed to 100 and is distributed across the ranks. The running
@@ -123,8 +123,20 @@ since we don't want any 2 ranks to be executed on the same core in-serial.
 Code is attached.
 
 5.)
+(not done yet)
 
 6.)
+(not done yet)
+checking for each dart count if parallelism (adding more ranks) keeps on offering running time improvement
+or the setup cost and communication cost is greater than the cost of parallelism...
+communication cost will be studied in question 7 since the processes will have to communicate across nodes rather
+than inter-process communication like shared memory communication. 
+
+small test here for 1e4:
+running time is 0.0089 when the ranks are increased to 64 as compared to 0.0026 for 20 ranks.
+This is because the computations have been parallelized as much as possible so the setup costs
+and communication costs are what will be increased for every rank added. 
 
 7.)
+(not done yet)
 
