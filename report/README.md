@@ -7,12 +7,12 @@
 
 2.19) Using a chunksize of 1 is a bad strategy because multiple threads are accessing the same cache block at the same time. This can force each thread to reload cache lines as if it were actually utilizing the same piece of data and drastically slow down each thread. A larger chunksize that is divisible by the size of a cache line is much preferred.
 
-2.21) The follow pseudocode solves the additional problem with the boundary conditions:
+2.21) The following pseudocode solves the additional problem with the boundary conditions:
 ```
 
 ```
 
-2.22)
+2.22) The following pseudocode solves the problem in equation 2.5 with ISends and IReceives:
 ```
 MPI_Comm_rank(MPI_COMM_WORLD,&myTaskID);
 MPI_Comm_size(MPI_COMM_WORLD,&ntasks);
