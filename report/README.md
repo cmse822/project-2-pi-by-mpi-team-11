@@ -75,10 +75,14 @@ Code is attached
 
 2.) 
 Every rank executes the same number of rounds=100.
-Running time for number of ranks=1: 0.041468  
-Running time for number of ranks=2: 0.043172  
-Running time for number of ranks=3: 0.051310  
-Running time for number of ranks=4: 0.043451  
+Running time for number of ranks=1: 0.041468 
+
+Running time for number of ranks=2: 0.043172 
+
+Running time for number of ranks=3: 0.051310
+
+Running time for number of ranks=4: 0.043451
+
 Running time for number of ranks=20: 0.044228 
 
 The running times for these 5 different runs are very similar since the same number of rounds have
@@ -88,19 +92,26 @@ stable as we increase the number of ranks. This stable slight increase is due to
 because of the reduce operation time increase. That being said, it doesn't seem to be a problem when compared
 with the added number of needed computation (number of rounds). This is a weak scaling study.
 
+
 Note: For each different run, we allocated number of processors equal or greater than the number of ranks to be executed
 since we don't want any 2 or morre ranks to be executed on the same core in-serial. 
 
 3.) 
+
 Number of rounds is fixed to = 100. Every rank/process executes 100/(number of processes) rounds.
 Remainder number of rounds is equally distributed across ranks (remainder is always less than
 number of ranks so each rank at most executes 1 round from the remainder rounds).
 
-Running time for number of ranks=1: 0.043623  
+Running time for number of ranks=1: 0.043623
+
 Running time for number of ranks=2: 0.019951
+
 Running time for number of ranks=3: 0.013891
+
 Running time for number of ranks=4: 0.010499 
+
 Running time for number of ranks=20; 0.002677
+
 
 This is a strong scaling study. The number of rounds is fixed to 100 and is distributed across the ranks. The running
 time as we increase the ranks is decreasing because fixed computations (across different runs) are being distributed in a single run. The running time is constantly decreasing which means that there are no bottlenecks such as a communication bottleneck.
