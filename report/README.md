@@ -71,7 +71,9 @@ The output printed the first print statement four times, then the middle stateme
 ## Part 4: Eat Some Pi
 
 1.) 
-Code is attached
+report/mpi_pi_calc.c [Every rank executes same number of rounds]
+
+report/mpi_pi_calc_div.c [Number of rounds are distributed across ranks]
 
 2.) 
 Every rank executes the same number of rounds=100.
@@ -86,9 +88,9 @@ Running time for number of ranks=4: 0.043451
 Running time for number of ranks=20: 0.044228 
 
 The running times for these 5 different runs are very similar since the same number of rounds have
-to be executed on each rank per run. There is more computation as we increase ranks but these computations are being
+to be executed on each rank per run. There is more computation to be done as we increase ranks but these computations are being
 parallelized. There is a slight increase in running time if we keep on adding ranks and this slight increase will become
-stable as we increase the number of ranks. This stable slight increase is due to the added setup time and 
+stable as we keep increasing the number of ranks. This stable slight increase is due to the added setup time and 
 because of the reduce operation time increase. That being said, it doesn't seem to be a problem when compared
 with the added number of needed computation (number of rounds). This is a weak scaling study.
 
@@ -114,13 +116,19 @@ Running time for number of ranks=20: 0.002677
 
 
 This is a strong scaling study. The number of rounds is fixed to 100 and is distributed across the ranks. The running
-time as we increase the ranks is decreasing because fixed computations (across different runs) are being distributed in a single run. The running time is constantly decreasing which means that there are no bottlenecks such as a communication bottleneck.
+time as we increase the ranks is decreasing because fixed computations (across different runs) are being distributed in a single run. Specifically, if we look at the parallel scaling efficiency when we have 2 ranks it's equal to 1.09 which means that there's a super linear speedup when we have 2 ranks. With 3 ranks, the parallel scaling efficiency is 1.04 which means super linear speedup as well. this is the
+case as well for ranks=4 with parallel scaling efficiency of 1.03. For ranks=20, the parallel scaling efficiency becomes 0.84 since the 
+number of ranks is high enough such that the computatoins have been parallelized as much as possible and now the setup time costs and communication time costs for each newly added rank is greater than what this newly rank can offer in terms of parallelizing computation.
+
+The running time is constantly decreasing which means that there are no bottlenecks such as a communication bottleneck.
 
 Note: For each different run, we allocated number of processors equal or greater than the number of ranks to be executed
 since we don't want any 2 ranks to be executed on the same core in-serial. 
 
 4.)
-Code is attached.
+Code: report/mpi_pi_calc_div.c [Change the number of darts accordingly]
+Also, change the number of processors allocated in job_q4.sb accordingly (1 node is used only).
+
 
 5.)
 (not done yet)
