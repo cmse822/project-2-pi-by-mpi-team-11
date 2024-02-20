@@ -153,8 +153,8 @@ Also, change the number of processors allocated in job_q4.sb accordingly (1 node
 - 64 ranks parallel scaling efficiency: 0.002684 /(4.19375e-5*64) = 1.0
   
 -> Number of darts = e9 (running time of rank=1 is 2673.575519 s)
-- 2 ranks parallel scaling efficiency: 2673.575519 /(*2) = ?
-- 4 ranks parallel scaling efficiency: 2673.575519 /(*4) = ?
+- 2 ranks parallel scaling efficiency: 2673.575519 /(1598.9*2) = 0.883
+- 4 ranks parallel scaling efficiency: 2673.575519 /(992.74*4) = 0.673
 - 8 ranks parallel scaling efficiency: 2673.575519 /(428.475023 *8) =  0.779968311
 - 16 ranks parallel scaling efficiency: 2673.575519 /(231.552746*16) = 0.721643223
 - 32 ranks parallel scaling efficiency:  2673.575519 /(107.661615*32) = 0.776035498
