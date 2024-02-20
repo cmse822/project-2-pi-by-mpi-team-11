@@ -136,17 +136,30 @@ Also, change the number of processors allocated in job_q4.sb accordingly (1 node
 6.) 
 (For all experiments, number of rounds is fixed to 100).
 
--> Number of darts = e6
-- 2 ranks parallel efficiency: 2.666473 /(1.330916*2) = 1.00174354
-- 4 ranks parallel efficiency: 2.666473 /(0.671042*4) = 0.993407641
-- 8 ranks parallel efficiency: 2.666473 /(0.354540*8) = 0.940117124
-- 16 ranks parallel efficiency: 2.666473 /(0.187276*16) = 0.889887452
-- 32 ranks parallel efficiency:  2.666473 /(0.109468*32) = 0.761202189
-- 64 ranks parallel efficiency: 2.666473 /(0.065464*64) = 0.636435913
+-> Number of darts = e6 (running time of rank=1 is 2.666473 s)
+- 2 ranks parallel scaling efficiency: 2.666473 /(1.330916*2) = 1.00174354
+- 4 ranks parallel scaling efficiency: 2.666473 /(0.671042*4) = 0.993407641
+- 8 ranks parallel scaling efficiency: 2.666473 /(0.354540*8) = 0.940117124
+- 16 ranks parallel scaling efficiency: 2.666473 /(0.187276*16) = 0.889887452
+- 32 ranks parallel scaling efficiency:  2.666473 /(0.109468*32) = 0.761202189
+- 64 ranks parallel scaling efficiency: 2.666473 /(0.065464*64) = 0.636435913
 
--> Number of darts = e3
+-> Number of darts = e3 (running time of rank=1 is 0.002684 s)
+- 2 ranks parallel scaling efficiency: 0.002684 /(0.001342*2) = 1.0
+- 4 ranks parallel scaling efficiency: 0.002684 /(0.000671*4) = 1.0
+- 8 ranks parallel scaling efficiency: 0.002684 /(0.0003355*8) = 1.0
+- 16 ranks parallel scaling efficiency: 0.002684 /(0.00016775*16) = 1.0
+- 32 ranks parallel scaling efficiency:  0.002684 /(8.3875e-5*32) = 1.0
+- 64 ranks parallel scaling efficiency: 0.002684 /(4.19375e-5*64) = 1.0
+  
+-> Number of darts = e9 (running time of rank=1 is 2673.575519 s)
+- 2 ranks parallel scaling efficiency: 2673.575519 /(*2) = ?
+- 4 ranks parallel scaling efficiency: 2673.575519 /(*4) = ?
+- 8 ranks parallel scaling efficiency: 2673.575519 /(428.475023 *8) =  0.779968311
+- 16 ranks parallel scaling efficiency: 2673.575519 /(231.552746*16) = 0.721643223
+- 32 ranks parallel scaling efficiency:  2673.575519 /(107.661615*32) = 0.776035498
+- 64 ranks parallel scaling efficiency: 2673.575519 /(57.994527*64) = 0.720319996
 
--> Number of darts = e9
 
 
 Note:
@@ -162,5 +175,5 @@ This is because the computations have been parallelized as much as possible so t
 and communication costs are what will be increased for every rank added. 
 
 7.)
-(not done yet)
+(not done yet) ( same as 6 but use 3-4 different nodes) 
 
