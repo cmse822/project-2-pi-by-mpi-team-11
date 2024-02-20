@@ -133,8 +133,23 @@ Also, change the number of processors allocated in job_q4.sb accordingly (1 node
 5.)
 (not done yet)
 
-6.)
+6.) 
+(For all experiments, number of rounds is fixed to 100).
 
+-> Number of darts = e6
+- 2 ranks parallel efficiency: 2.666473 /(1.330916*2) = 1.00174354
+- 4 ranks parallel efficiency: 2.666473 /(0.671042*4) = 0.993407641
+- 8 ranks parallel efficiency: 2.666473 /(0.354540*8) = 0.940117124
+- 16 ranks parallel efficiency: 2.666473 /(0.187276*16) = 0.889887452
+- 32 ranks parallel efficiency:  2.666473 /(0.109468*32) = 0.761202189
+- 64 ranks parallel efficiency: 2.666473 /(0.065464*64) = 0.636435913
+
+-> Number of darts = e3
+
+-> Number of darts = e9
+
+
+Note:
 (not done yet)
 checking for each dart count if parallelism (adding more ranks) keeps on offering running time improvement
 or the setup cost and communication cost is greater than the cost of parallelism...
