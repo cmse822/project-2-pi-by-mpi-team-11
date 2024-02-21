@@ -153,16 +153,16 @@ Note: For each different run (certain rank run), we allocated the number of proc
 
 -> Code file: report/mpi_pi_calc_div.c [Same code file as question 3 but here we change the number of darts thrown accordingly]
 
--> Job script: job_q4.sb
+-> Job script: report/job_q4.sb
 
 -> We change the number of processors allocated in job_q4.sb accordingly (1 node is used only).
 
 -> #SBATCH --constraint=amr is used to run our processes on an amr node.
 
 5.)
-As the referenced figure (Q5_err_log.png) shows, the computed error generally decreased with the number of darts for any rank. This indicates that the calculated pi number becomes more accurate as the number of darts is increased. On the other hand, for each of the cases with a fixed number of darts, the log-log curves show an increase in computed error followed by a decrease at higher node numbers. Therefore, the ideal algorithm, where the accuracy, computation time, and resources are desired, requires a higher number of darts and moderate rank usage.
+As the referenced figure (report/Q5_err_log.png) shows, the computed error generally decreased with the number of darts for any rank. This indicates that the calculated pi number becomes more accurate as the number of darts is increased. On the other hand, for each of the cases with a fixed number of darts, the log-log curves show an increase in computed error followed by a decrease at higher node numbers. Therefore, the ideal algorithm, where the accuracy, computation time, and resources are desired, requires a higher number of darts and moderate rank usage.
 
-For computing the rate of convergence for every processor count, we will use the log-transformed data and return the slope of the line of best fit using linear regression on the errors of the 3 dart counts for each processor count. 
+For computing the rate of convergence for every processor count, we will use the log-transformed data and return the slope of the line of best fit using linear regression on the errors of the 3 dart counts for each processor count. The curves that we will fit lines on are shown in figure report/Q5_curves_log.png. 
 
 -> The slopes obtained are the following:
 
@@ -240,7 +240,7 @@ Similar to what we observe in the referenced figure, the 3 dart functions initia
 
 7.)
 
--> We used 4 nodes and we distributed the ranks across the nodes equally as shown in job_q7.sb.
+-> We used 4 nodes and we distributed the ranks across the nodes equally as shown in report/job_q7.sb.
 
 -> We didn't put a node constraint when requesting the resources.
 
