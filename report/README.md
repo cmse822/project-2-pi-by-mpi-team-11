@@ -162,6 +162,20 @@ Note: For each different run (certain rank run), we allocated the number of proc
 5.)
 As the referenced figure shows, the computed error generally decreased with the number of darts for any rank. This indicates that the calculated pi number becomes more accurate as the number of darts is increased. On the other hand, for each of the cases with a fixed number of darts, the log-log curves show an increase in computed error followed by a decrease at higher node numbers. Therefore, the ideal algorithm, where the accuracy, computation time, and resources are desired, requires a higher number of darts and moderate rank usage.
 
+For computing the rate of convergence for every processor count, we will use the log-transformed data and return the slope of the line of best fit using linear regression on the errors of the 3 dart counts for each processor count. 
+
+-> The slopes obtained are the following:
+1 processor: -5.8588
+2 processors: -5.8588
+4 processors: -3.4410
+8 processors: -7.0144
+16 processors: -7.07566
+32 processors: -8.2
+64 processors: -5.12918
+
+Similar to what we observe in the referenced figure, the 3 dart functions initially diverge from each other (high decrease rate on all processor counts) then converge (lower decrease rate on all processor counts) and then start to initially diverge again. Based on this observation, the ideal algorithm will make use of high number of darts and moderate rank usage as mentioned above. 
+
+
 
 6.) 
 
