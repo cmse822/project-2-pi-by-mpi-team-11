@@ -153,7 +153,7 @@ Note: For each different run (certain rank run), we allocated the number of proc
 
 -> Code file: report/mpi_pi_calc_div.c [Same code file as question 3 but here we change the number of darts thrown accordingly]
 
--> Also, change the number of processors allocated in job_q4.sb accordingly (1 node is used only).
+-> We change the number of processors allocated in job_q4.sb accordingly (1 node is used only).
 
 
 5.)
