@@ -165,6 +165,7 @@ As the referenced figure shows, the computed error generally decreased with the 
 For computing the rate of convergence for every processor count, we will use the log-transformed data and return the slope of the line of best fit using linear regression on the errors of the 3 dart counts for each processor count. 
 
 -> The slopes obtained are the following:
+
 1 processor: -5.8588
 
 2 processors: -5.8588
