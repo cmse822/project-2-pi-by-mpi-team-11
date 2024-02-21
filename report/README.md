@@ -166,12 +166,20 @@ For computing the rate of convergence for every processor count, we will use the
 
 -> The slopes obtained are the following:
 1 processor: -5.8588
+
 2 processors: -5.8588
+
 4 processors: -3.4410
+
 8 processors: -7.0144
+
 16 processors: -7.07566
+
 32 processors: -8.2
+
 64 processors: -5.12918
+
+
 
 Similar to what we observe in the referenced figure, the 3 dart functions initially diverge from each other (high decrease rate on all processor counts) then converge (lower decrease rate on all processor counts) and then start to initially diverge again. Based on this observation, the ideal algorithm will make use of high number of darts and moderate rank usage as mentioned above. 
 
