@@ -62,11 +62,11 @@ The downside to this would be that there is no guarantee of receipt of the sent 
 
 The output printed the first print statement four times, then the middle statement four times, then the final statement four times despite the first and final statements being before and after the `MPI_Init()` and `MPI_Finalize()` statements, respectively. This is due to the fact that MPI runs all "ranks" in parallel from the beginning of the code to the end, not from the `MPI_Init()` to the `MPI_Finalize()`.
 
-2.3)
+2.3) Code File: report/part3/2.3.c ; Job Script: report/part3/job_2.3.sb
 
-2.4)
+2.4) Code File: report/part3/2.4.c
 
-2.5)
+2.5) Code File: report/part3/2.5.c
 
 ## Part 4: Eat Some Pi
 
