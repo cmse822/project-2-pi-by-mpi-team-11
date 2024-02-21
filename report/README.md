@@ -214,9 +214,23 @@ Note: For each different run (certain rank run), we allocated the number of proc
 
 
 
-
-
-
-
 7.)
+
+-> We used 4 nodes and we distributed the ranks across the nodes equally as shown in job_q7.sb.
+
+-> We didn't put a node constraint when requesting the resources.
+
+-> We applied question 4 again on e9 dart counts but using 4 nodes where the ranks are distributed equally across the 4 nodes. 
+
+-> Number of darts = e9 (running time of rank=1 is 2673.575519 s) 
+- 4 ranks (4 nodes used) parallel scaling efficiency: 2673.575519 /(1048.64 *4) = 0.637
+- 8 ranks (4 nodes used) parallel scaling efficiency: 2673.575519 /( 545.71 *8) =  0.612
+- 16 ranks (4 nodes used) parallel scaling efficiency: 2673.575519 /(477.30 *16) = 0.350
+- 32 ranks (4 nodes used) parallel scaling efficiency:  2673.575519 /(201.18 *32) = 0.415
+- 64 ranks (4 nodes used) parallel scaling efficiency: 2673.575519 /(96.74 * 64) = 0.43
+
+-> The running time for e9 dart counts using 4 nodes is around double the running time for e9 dart counts when 1 node is used which was
+reported in question 6. So, the parallel scaling efficiency will be consistently lower as shown above. Moreover, the decrease in the rate of parallel scaling efficiency as ranks increase is much higher when 4 nodes are being used. This is because communication plays a major factor here because the nodes are separate machines that have to communicate (they don't share memory ; no ipc communication) where all cores in a single node share the same network interface.
+
+
 
