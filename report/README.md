@@ -117,7 +117,7 @@ Note: For each different run (certain rank run), we allocated the number of proc
 
 3.) 
 
--> 1 node is being utilized here so we refer to single machine inter-process communication done by MPI as communication costs.
+-> 1 node is being utilized here so we refer to single machine inter-process communication done by MPI as communication costs (inter-process communication time is negligible).
 
 -> Number of rounds is fixed to 100 (will be distributed across R ranks).
 
@@ -208,7 +208,7 @@ Note: For each different run (certain rank run), we allocated the number of proc
 
 
 
-=> For e9 dart counts, the problem size is bigger and the parallel scaling efficiency is much more efficient than smaller problems such as the e6 and e3 dart counts. This is because there’s more parallel computation to be done in each round for every process so the rate of decrease of parallel scaling efficiency as we add more ranks in the e9 dart counts problem is less than the rate of decrease of parallel scaling efficiency as we add more ranks in the e6 or e3 dart counts problem. In other words, it takes longer than in the e6 darts count problem to reach a point where adding more parallelization of computation doesn’t have any additional benefit because of “setup costs + cache misses costs + interprocess communication costs (even though negligible)” becoming the main source of additional costs. Based on these observations, we argue that the major reason why the rate of decrease of parallel scaling efficiency for the e9 dart counts problem is lower than that for the e6 dart counts problem is because the problem size is bigger and there’s a reduction in cache misses and improved memory access patterns.
+=> For e9 dart counts, the problem size is bigger and the parallel scaling efficiency is much more efficient than smaller problems such as the e6 and e3 dart counts. This is because there’s more parallel computation to be done in each round for every process so the rate of decrease of parallel scaling efficiency as we add more ranks in the e9 dart counts problem is less than the rate of decrease of parallel scaling efficiency as we add more ranks in the e6 or e3 dart counts problem. In other words, it takes longer than in the e6 darts count problem to reach a point where adding more parallelization of computation doesn’t have any the same benefit as before because of “setup costs + cache misses costs + interprocess communication costs (even though negligible)” slowly becoming the main source of additional costs. Based on these observations, we argue that the major reason why the rate of decrease of parallel scaling efficiency for the e9 dart counts problem is lower than that for the e6 dart counts problem is because the problem size is bigger and there’s a reduction in cache misses and improved memory access patterns.
 
 
 
