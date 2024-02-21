@@ -7,7 +7,7 @@
 #SBATCH --ntasks-per-node=16
 #SBATCH --cpus-per-task=1         # number of CPUs (or cores) per task (same as -c)
 #SBATCH --mem-per-cpu=100MB            # memory required per allocated CPU (or core) - amount of memory (in bytes)
-
+#SBATCH --constraint=amr
 ########## Command Lines to Run ##########
 
 mpiexec -np 16 mpi_pi_calc_div
